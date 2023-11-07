@@ -20,7 +20,6 @@
         <el-footer>
           <el-button type="primary" @click="login">登录</el-button>
         </el-footer>
-        
       </el-form>
       </div>
     </el-card>
