@@ -1,25 +1,39 @@
 <template>
   <div class="box">
     <el-container>
-      <el-header></el-header>
+      <el-scrollbar>
+        <el-aside :width="isCollapse ? '' : '220px'"
+          ><nav-menu :is-collapse="isCollapse"></nav-menu
+        ></el-aside>
+      </el-scrollbar>
       <el-container>
+        <el-header>
+          <el-row>
+              <el-col :span="1">
+                <span class="collapse-size"
+                  ><i
+                    :class="isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
+                    @click="isShow(isCollapse)"
+                  ></i
+                ></span>
+              </el-col>
+              <!--导航栏-->
+              <el-col :span="23">
+                <el-breadcrumb separator-class="el-icon-arrow-right">
+                  <el-breadcrumb-item></el-breadcrumb-item>
+                </el-breadcrumb>
+              </el-col>
+            </el-row>
+        </el-header>
         <el-scrollbar>
-          <el-aside :width="isCollapse ? '' : '220px'"
-            ><nav-menu :is-collapse="isCollapse"></nav-menu
-          ></el-aside>
-        </el-scrollbar>
-        <el-container>
           <el-main>
-            <span class="collapse-size"
-              ><i
-                :class="isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
-                @click="isShow(isCollapse)"
-              ></i
-            ></span>
-          </el-main>
-        </el-container>
+          <!--内容承载区-->
+          <div class="main-container">
+            <router-view />
+          </div>
+        </el-main>
+        </el-scrollbar>
       </el-container>
-      <el-footer></el-footer>
     </el-container>
   </div>
 </template>
@@ -44,16 +58,17 @@ export default {
 
 <style lang="scss" scoped>
 $default-height: 60px;
+$default-margin: 6px;
 .el-header {
-  background: #0088e2;
+  background: #ffffff;
   height: $default-height;
+  margin: $default-margin $default-margin 0 $default-margin;
+  padding: 0;
+  line-height: $default-height;
 }
 .el-container {
-  height: calc(100vh - 2 * $default-height);
-}
-
-.el-main {
-  padding: 0;
+  background: #e8ecf6;
+  height: 100vh;
 }
 
 .collapse-size {
@@ -72,7 +87,20 @@ $default-height: 60px;
   overflow-x: hidden !important;
 }
 
-.el-footer {
-background: black;
+.box ::v-deep .el-main {
+  padding: 0;
+  margin: $default-margin;
+  overflow-x: hidden;
+}
+
+.box ::v-deep .el-image {
+  img {
+    width: 24px;
+    margin-top: 16px;
+  }
+}
+
+.main-container {
+  height: calc(100vh - $default-height - 3 * $default-margin);
 }
 </style>

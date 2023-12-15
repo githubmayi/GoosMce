@@ -4,8 +4,10 @@ import router from './routers/index'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/styles/index.css'
+import * as echarts from 'echarts';
 
 Vue.use(ElementUI);
+Vue.prototype.$echarts = echarts;
 
 Vue.config.productionTip = false
 

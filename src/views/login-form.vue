@@ -83,7 +83,7 @@
 
 <script>
 import { MessageBox } from "element-ui";
-import login from "../apis/index";
+import login from "../apis/login";
 
 export default {
   data() {

@@ -1,4 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
+
+require('events').EventEmitter.defaultMaxListeners = 20;
 module.exports = defineConfig({
   transpileDependencies: true
 })
