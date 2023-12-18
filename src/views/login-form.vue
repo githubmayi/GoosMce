@@ -56,7 +56,7 @@
   justify-content: center;
   align-items: center;
   height: 340px;
-  background: rgba(255,255,255,.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .login-title {
@@ -65,7 +65,7 @@
   text-align: center;
 }
 
-.login-title .el-image{
+.login-title .el-image {
   width: 84px;
 }
 
@@ -76,15 +76,15 @@
 
 .el-footer .el-button--primary {
   width: 100%;
-  background-color: #0088E2;
-  border-color: #0088E2;
+  background-color: #0088e2;
+  border-color: #0088e2;
 }
 </style>
 
 <script>
 import { MessageBox } from "element-ui";
 import login from "../apis/login";
-
+import { setItem } from "@/utils/storage";
 export default {
   data() {
     return {
@@ -106,6 +106,12 @@ export default {
           if (!res) {
             MessageBox.alert("账号或密码错误！");
           } else {
+            const Mock = require("mockjs");
+            const token = Mock.mock({
+              regexp: /[A-Za-z0-9]{32}\.[A-Za-z0-9]{42}\.[A-Za-z0-9]{43}/,
+            });
+            console.log(token);
+            setItem(token);
             this.$router.push("/Main");
           }
         })

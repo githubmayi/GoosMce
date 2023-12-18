@@ -30,6 +30,12 @@ const routes = [
         }
       ]
     },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: () => import('../views/view-404')
+    }
+  
   ];
 
   const router = new VueRouter({

@@ -1345,6 +1345,11 @@
   "resolved" "https://registry.npmmirror.com/@types/minimist/-/minimist-1.2.2.tgz"
   "version" "1.2.2"
 
+"@types/mockjs@^1.0.10":
+  "integrity" "sha512-SXgrhajHG7boLv6oU93CcmdDm0HYRiceuz6b+7z+/2lCJPTWDv0V5YiwFHT2ejE4bQqgSXQiVPQYPWv7LGsK1g=="
+  "resolved" "https://registry.npmjs.org/@types/mockjs/-/mockjs-1.0.10.tgz"
+  "version" "1.0.10"
+
 "@types/node@*":
   "integrity" "sha512-vOBLVQeCQfIcF/2Y7eKFTqrMnizK5lRNQ7ykML/5RuwVXVWxYkgwS7xbt4B6fKCUPgbSL5FSsjHQpaGQP/dQmw=="
   "resolved" "https://registry.npmmirror.com/@types/node/-/node-20.3.2.tgz"
@@ -2604,6 +2609,11 @@
   dependencies:
     "delayed-stream" "~1.0.0"
 
+"commander@*", "commander@^8.3.0":
+  "integrity" "sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww=="
+  "resolved" "https://registry.npmmirror.com/commander/-/commander-8.3.0.tgz"
+  "version" "8.3.0"
+
 "commander@^2.20.0":
   "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
   "resolved" "https://registry.npmmirror.com/commander/-/commander-2.20.3.tgz"
@@ -2613,11 +2623,6 @@
   "integrity" "sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw=="
   "resolved" "https://registry.npmmirror.com/commander/-/commander-7.2.0.tgz"
   "version" "7.2.0"
-
-"commander@^8.3.0":
-  "integrity" "sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww=="
-  "resolved" "https://registry.npmmirror.com/commander/-/commander-8.3.0.tgz"
-  "version" "8.3.0"
 
 "commondir@^1.0.1":
   "integrity" "sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg=="
@@ -4877,6 +4882,18 @@
   "resolved" "https://registry.npmmirror.com/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
+"mock@^0.1.1":
+  "integrity" "sha512-eJcWbgoaFUcPqU0g6AcuPKxoe83f7IPALr+dTwCwBN4Iuj4UlLzPtzUlsIpbLVzaXU0CkxP8PvLWKKlFDYdyCw=="
+  "resolved" "https://registry.npmjs.org/mock/-/mock-0.1.1.tgz"
+  "version" "0.1.1"
+
+"mockjs@^1.1.0":
+  "integrity" "sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ=="
+  "resolved" "https://registry.npmjs.org/mockjs/-/mockjs-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "commander" "*"
+
 "module-alias@^2.2.2":
   "integrity" "sha512-23g5BFj4zdQL/b6tor7Ji+QY4pEfNH784BMslY9Qb0UnJWRAt+lQGLYmRaM0KDBwIG23ffEBELhZDP2rhi9f/Q=="
   "resolved" "https://registry.npmmirror.com/module-alias/-/module-alias-2.2.3.tgz"
@@ -6853,13 +6870,18 @@
   "resolved" "https://registry.npmmirror.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@*", "vue@^2 || ^3.2.13", "vue@^2.5.17", "vue@^2.6.14":
+"vue@*", "vue@^2 || ^3.2.13", "vue@^2.0.0", "vue@^2.5.17", "vue@^2.6.14":
   "integrity" "sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ=="
   "resolved" "https://registry.npmmirror.com/vue/-/vue-2.7.14.tgz"
   "version" "2.7.14"
   dependencies:
     "@vue/compiler-sfc" "2.7.14"
     "csstype" "^3.1.0"
+
+"vuex@^3.6.2":
+  "integrity" "sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw=="
+  "resolved" "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz"
+  "version" "3.6.2"
 
 "watchpack@^2.4.0":
   "integrity" "sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg=="

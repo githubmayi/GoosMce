@@ -62,7 +62,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .home-box {
   width: 100%;
 }

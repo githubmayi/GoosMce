@@ -87,10 +87,16 @@ $default-margin: 6px;
   overflow-x: hidden !important;
 }
 
+.box ::v-deep .el-scrollbar__view {
+  height: 100%;
+  
+}
+
 .box ::v-deep .el-main {
   padding: 0;
-  margin: $default-margin;
   overflow-x: hidden;
+  height: 100%;
+  margin: $default-margin;
 }
 
 .box ::v-deep .el-image {
@@ -101,6 +107,10 @@ $default-margin: 6px;
 }
 
 .main-container {
-  height: calc(100vh - $default-height - 3 * $default-margin);
+  height: 100%;
+}
+
+.box ::v-deep .el-scrollbar {
+  height: 100%;
 }
 </style>
