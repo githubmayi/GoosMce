@@ -128,7 +128,7 @@ export default {
         userId: userId,
         username: userName,
       };
-      const token = jwt.sign(payload, secretKey,{ expiresIn: '1h' });
+      const token = jwt.sign(payload, secretKey,{ expiresIn: '1h' }); //1小时过期
       return token;
     },
 

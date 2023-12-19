@@ -2,37 +2,35 @@
   <div class="box">
     <el-container>
       <el-scrollbar>
-        <el-aside :width="isCollapse ? '' : '220px'"
+        <el-aside :width="isCollapse ? '' : '180px'"
           ><nav-menu :is-collapse="isCollapse"></nav-menu
         ></el-aside>
       </el-scrollbar>
       <el-container>
         <el-header>
           <el-row>
-              <el-col :span="1">
-                <span class="collapse-size"
-                  ><i
-                    :class="isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
-                    @click="isShow(isCollapse)"
-                  ></i
-                ></span>
-              </el-col>
-              <!--导航栏-->
-              <el-col :span="23">
-                <el-breadcrumb separator-class="el-icon-arrow-right">
-                  <el-breadcrumb-item></el-breadcrumb-item>
-                </el-breadcrumb>
-              </el-col>
-            </el-row>
+            <el-col :span="1">
+              <span class="collapse-size"
+                ><i
+                  :class="isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
+                  @click="isShow(isCollapse)"
+                ></i
+              ></span>
+            </el-col>
+            <!--导航栏-->
+            <el-col :span="23">
+              <el-breadcrumb separator-class="el-icon-arrow-right">
+                <el-breadcrumb-item></el-breadcrumb-item>
+              </el-breadcrumb>
+            </el-col>
+          </el-row>
         </el-header>
-        <el-scrollbar>
-          <el-main>
+        <el-main>
           <!--内容承载区-->
           <div class="main-container">
-            <router-view />
+            <el-scrollbar style="height: 100%"> <router-view /></el-scrollbar>
           </div>
         </el-main>
-        </el-scrollbar>
       </el-container>
     </el-container>
   </div>
@@ -89,12 +87,11 @@ $default-margin: 6px;
 
 .box ::v-deep .el-scrollbar__view {
   height: 100%;
-  
 }
 
 .box ::v-deep .el-main {
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100%;
   margin: $default-margin;
 }
@@ -112,5 +109,9 @@ $default-margin: 6px;
 
 .box ::v-deep .el-scrollbar {
   height: 100%;
+}
+
+.box ::v-deep .is-horizontal {
+  display: none !important;
 }
 </style>
