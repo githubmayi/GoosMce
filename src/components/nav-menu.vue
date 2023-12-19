@@ -22,10 +22,9 @@
       </template>
       <div v-if="menu.childMenus && menu.childMenus.length > 0">
         <div v-for="child in menu.childMenus" :key="child.id">
-          <el-menu-item
-            :index="getIndex(child.FrmName)"
-            >{{ child.MenuText }}</el-menu-item
-          >
+          <el-menu-item :index="getIndex(child.FrmName)">{{
+            child.MenuText
+          }}</el-menu-item>
         </div>
       </div>
     </el-submenu>
@@ -99,7 +98,7 @@ export default {
 
     getIndex(name) {
       return `/Main/${name.replace(/Frm/g, "")}`;
-    }
+    },
   },
 };
 </script>
