@@ -9,7 +9,7 @@ import Vuex from 'vuex'
 Vue.use(ElementUI);
 Vue.use(Vuex);
 Vue.prototype.$echarts = echarts;
-
+document.title = '乐研管理系统';
 Vue.config.productionTip = false
 
 new Vue({

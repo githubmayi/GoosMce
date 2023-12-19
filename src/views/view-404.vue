@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      imgSrc: require("../assets//images//404.svg"),
+      imgSrc: require("../assets//images//404-2.svg"),
     };
   },
 };

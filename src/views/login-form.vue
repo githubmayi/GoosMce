@@ -84,7 +84,7 @@
 <script>
 import { MessageBox } from "element-ui";
 import login from "../apis/login";
-import { setItem } from "@/utils/storage";
+import { getItem, setItem, removeItem } from "@/utils/storage";
 export default {
   data() {
     return {
@@ -98,26 +98,50 @@ export default {
     };
   },
   methods: {
-    login() {
+    async login() {
       this.loading = true;
-      login(this.loginForm)
-        .then((res) => {
-          debugger;
-          if (!res) {
-            MessageBox.alert("账号或密码错误！");
-          } else {
-            const Mock = require("mockjs");
-            const token = Mock.mock({
-              regexp: /[A-Za-z0-9]{32}\.[A-Za-z0-9]{42}\.[A-Za-z0-9]{43}/,
-            });
-            console.log(token);
-            setItem(token);
-            this.$router.push("/Main");
+      try {
+        const res = await login(this.loginForm);
+        console.log(res);
+        if (!res) {
+          MessageBox.alert("账号或密码错误！");
+        } else {
+          if (getItem("token")) {
+            removeItem("token");
           }
-        })
-        .finally(() => {
-          this.loading = false;
-        });
+          const token = this.getToken(res.Id, this.loginForm.loginName);
+          console.log(token);
+          setItem("token", token);
+          this.$router.push("/Main");
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.loading = false;
+      }
+    },
+
+    getToken(userId, userName) {
+      const jwt = require('jsonwebtoken');
+      const secretKey = this.generateRandomString(14);
+      const payload = {
+        userId: userId,
+        username: userName,
+      };
+      const token = jwt.sign(payload, secretKey,{ expiresIn: '1h' });
+      return token;
+    },
+
+    generateRandomString(length) {
+      const characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let randomString = "";
+
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomString += characters.charAt(randomIndex);
+      }
+      return randomString;
     },
   },
 };
