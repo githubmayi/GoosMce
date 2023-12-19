@@ -117,7 +117,7 @@
 }
 
 .el-form--inline {
-    height: 30px;
+  height: 30px;
 }
 </style>
 
